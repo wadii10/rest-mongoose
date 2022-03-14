@@ -1,4 +1,4 @@
-import { ADD, GET } from "./actionTypes";
+import { ADD, DELETE, GET, UPDATE } from "./actionTypes";
 import axios from "axios";
 
 export const getUsers = () => async(dispatch) => {
@@ -27,4 +27,32 @@ export const addUser = (newUser) => async(dipatch) => {
     } catch (error) {
         alert("add user problem");
     }
-} 
+};
+
+export const deleteUser = (_id) => async(dispatch) => {
+    try {
+        const res = await axios.delete(`/delete/${_id}`);
+        dispatch(
+            {
+                type : DELETE,
+                payload : res.data
+            }
+        )
+    } catch (error) {
+        alert("delete user error")
+    }
+};
+
+export const editeUser = (user) => async(dispatch) => {
+    try {
+        const res = await axios.put(`/update/${user._id}`, user);
+        dispatch(
+            {
+                type : UPDATE,
+                payload : res.data
+            }
+        )
+    } catch (error) {
+        alert("update user error");
+    }
+};
