@@ -17,10 +17,7 @@ const DetailUser = () => {
     useEffect(() => {
         try {
             const getOneUser = async () => {
-                const res = await axios.get("/get");
-                setUser(res.data.find(el => el._id === _id));
-
-                const res1 = await axios.get(`/get/${user._id}`) ;
+                const res1 = await axios.get(`/get/${_id}`) ;
                 return setUser(res1.data);
               };
               getOneUser();
