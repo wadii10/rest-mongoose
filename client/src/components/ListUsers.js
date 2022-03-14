@@ -16,7 +16,7 @@ const ListUsers = () => {
     }, []);
     
   return (
-    <div>
+    <div className='user-list' >
         {
             users && React.Children.toArray(
                 users.map( el => <UserCard user={el} />)

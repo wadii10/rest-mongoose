@@ -1,31 +1,15 @@
-.App {
-  text-align: center;
+*{
+  margin : 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +19,52 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+.user-card {
+  padding: 00.5rem;
+}
+
+.user-card:hover {
+  cursor: pointer;
+  transform: scale(1);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.btn-card {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.user-detail {
+  padding: 00.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.up {
+  flex: 1 1 auto;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 0.5rem;
+  border: none ;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2); */
+  /* box-shadow: 0 0 20px #eee; */
+ }
+
+.up:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.up-1 {
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }

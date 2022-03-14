@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Button, Card } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
+import UpdateUser from './UpdateUser';
 
 const DetailUser = () => {
 
@@ -28,8 +30,20 @@ const DetailUser = () => {
     }, [_id])
     
   return (
-    <div>
-        <h1>{user && user.fullName}</h1>
+    <div className='user-detail' >
+        
+        <Card border="primary" style={{ width: '19rem', height: '33rem' }}>
+        <Card.Img variant="top" src="/contact.png" style={{ height: '20rem', borderRadius: '50%' }} />
+        <Card.Body>
+          <Card.Title> {user && user.fullName} </Card.Title>
+          <Card.Text>
+            {user && user.phone}
+            <hr />
+            {user && user.email}
+          </Card.Text>
+          <Link to="/" ><Button className='up up-1' >Back</Button></Link>
+        </Card.Body>
+      </Card>
     </div>
   )
 }

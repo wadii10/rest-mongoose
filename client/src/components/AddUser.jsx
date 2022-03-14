@@ -49,7 +49,7 @@ const AddUser = () => {
 
     return (
         <div>
-            <Button variant="primary" onClick={openModal}>Add Contact</Button>
+            <Button className='up up-1' onClick={openModal}>Add Contact</Button>
 
             <Modal
                 isOpen={modalIsOpen}
