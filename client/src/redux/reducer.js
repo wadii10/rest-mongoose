@@ -1,4 +1,4 @@
-import { ADD, DELETE, GET, UPDATE } from "./actionTypes";
+import { ADD, DELETE, GET, GETUSER, UPDATE } from "./actionTypes";
 
 export const init = {
     users : null
@@ -20,6 +20,10 @@ export const reducer = ( state = init, {type, payload}) => {
 
         case UPDATE: return {
             ...state, users:state.users.map( el => el._id === payload._id ?payload :el)
+        };
+
+        case GETUSER: return {
+            ...state, users:payload
         };
 
         default:

@@ -1,4 +1,4 @@
-import { ADD, DELETE, GET, UPDATE } from "./actionTypes";
+import { ADD, DELETE, GET, GETUSER, UPDATE } from "./actionTypes";
 import axios from "axios";
 
 export const getUsers = () => async(dispatch) => {
@@ -56,3 +56,17 @@ export const editeUser = (user) => async(dispatch) => {
         alert("update user error");
     }
 };
+
+export const getOne = (_id) => async(dispatch) => {
+    try {
+        const res = await axios.get(`/get/${_id}`);
+        dispatch(
+            {
+                type : GETUSER,
+                payload : res.data 
+            }
+        )
+    } catch (error) {
+        alert('get one error')
+    }
+}
